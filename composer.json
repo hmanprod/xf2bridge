@@ -7,13 +7,13 @@
     "minimum-stability": "dev",
     "authors": [
         {
-            "name": "Dmitriy Shved",
-            "email": "swede2k@gmail.com"
+            "name": "RABOTOVAO Hery",
+            "email": "hmanprod@gmail.com"
         }
     ],
     "require": {
         "php" : ">=5.6.0",
-        "illuminate/support": "~5.0"
+        "illuminate/support": "^5.0"
     },
     "autoload":{
         "psr-4":{

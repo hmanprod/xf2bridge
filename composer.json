@@ -1,5 +1,5 @@
 {
-    "name": "swede2k/xf2bridge",
+    "name": "hmanprod/xf2bridge",
     "description": "A bridge to interface between laravel and Xenforo 2",
     "keywords": ["Xenforo 2", "Laravel 5", "Auth", "Bridge"],
     "type": "library",

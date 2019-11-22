@@ -2,7 +2,7 @@ XF2Bridge
 =========
 Simple Laravel Auth Bridge Xenforo 2 package...
 
-Fork of [URB/XenforoBridge](https://github.com/UnderRatedBrilliance/XenforoBridge) which is refactored to be utilized in Xenforo 2 without legacy support.
+Fork of [swede2k/xf2bridge] from [URB/XenforoBridge](https://github.com/UnderRatedBrilliance/XenforoBridge) which is refactored to be utilized in Xenforo 2 without legacy support.
 
 Installation
 ------------
@@ -12,12 +12,12 @@ Install the XenforoBridge package with Composer by adding the folowing to your c
 ```json
 {
     "require": {
-        "swede2k/xf2bridge": "dev-master"
+        "hmanprod/xf2bridge": "dev-master"
     },
     "repositories": [
         { 
             "type": "vcs",
-            "url": "https://github.com/swede2k/xf2bridge"
+            "url": "https://github.com/hmanprod/xf2bridge"
         }
 ],
 }

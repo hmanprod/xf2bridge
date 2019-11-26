@@ -59,7 +59,7 @@ class XF2Guard implements Guard
     {
         if($this->user())
         {
-            return $this->user()->getUserId();
+            return $this->user()->id;
         }
     }
 

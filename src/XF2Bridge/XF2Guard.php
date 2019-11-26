@@ -16,7 +16,7 @@ class XF2Guard implements Guard
     public function __construct(XF2Bridge $xenforo, $provider)
     {
         $this->xenforo  = $xenforo;
-        $this->$provider  = $provider;
+        $this->provider  = $provider;
     }
 
     public function check()

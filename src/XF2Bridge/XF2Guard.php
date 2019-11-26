@@ -2,6 +2,7 @@
 
 namespace swede2k\XF2Bridge;
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Contracts\Auth\Authenticatable;
 
@@ -10,10 +11,12 @@ class XF2Guard implements Guard
 {
     protected $xenforo;
     protected $user;
+    protected $provider;
 
-    public function __construct(XF2Bridge $xenforo)
+    public function __construct(XF2Bridge $xenforo, $provider)
     {
         $this->xenforo  = $xenforo;
+        $this->$provider  = $provider;
     }
 
     public function check()
@@ -37,8 +40,17 @@ class XF2Guard implements Guard
         if($this->xenforo->isLoggedIn())
         {
             $user = $this->xenforo->getVisitorObject();
+
+            $user = DB::table($this->provider)->updateOrInsert([
+                'xf_user_id' => $user->getUserId(),
+                'email' => $user->email,
+                'username' => $user->getName()
+            ]);
         }
-        return $this->user = $user; /** @todo Implement Authenticable */
+        
+        /** @todo Implement Authenticable */
+
+        return $this->user = $user;
     }
 
     public function id()

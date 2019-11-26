@@ -41,13 +41,13 @@ class XF2Guard implements Guard
         {
             $user = $this->xenforo->getVisitorObject();
 
-            $user = DB::table($this->provider)->updateOrInsert([
+            DB::table($this->provider)->updateOrInsert([
                 'xf_user_id' => $user->getUserId(),
                 'email' => $user->email,
                 'username' => $user->getName()
             ]);
-            
-            $this->user = $user;
+
+            $this->user = DB::table($this->provider)->where('xf_user_id', $user->getUserId())->first();
         }
         
         /** @todo Implement Authenticable */

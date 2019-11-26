@@ -46,11 +46,13 @@ class XF2Guard implements Guard
                 'email' => $user->email,
                 'username' => $user->getName()
             ]);
+            
+            $this->user = $user;
         }
         
         /** @todo Implement Authenticable */
 
-        return $this->user = $user;
+         return  $this->user;
     }
 
     public function id()

@@ -16,9 +16,9 @@ class XenAuthAdminMiddleware
 
     public function handle($request, Closure $next)
     {
-        $baseUrl = config('xenforobridge.xenforo_base_url_path');
+        $baseUrl = config('xf2bridge.xenforo_base_url_path');
 
-        if(!$this->xenforo->isAdmin() AND ! $this->xenforo->isBanned())
+        if(!$this->xenforo->isAdmin() || $this->xenforo->isBanned())
         {
             return redirect($baseUrl);
         }

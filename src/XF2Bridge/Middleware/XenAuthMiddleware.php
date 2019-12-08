@@ -16,9 +16,9 @@ class XenAuthMiddleware {
 
     public function handle($request, Closure $next)
     {
-        $baseUrl = config('xenforobridge.xenforo_base_url_path');
+        $baseUrl = config('xf2bridge.xenforo_base_url_path');
 
-        if(!$this->xenforo->isLoggedIn() AND ! $this->xenforo->isBanned())
+        if(!$this->xenforo->isLoggedIn() || $this->xenforo->isBanned())
         {
             return redirect($baseUrl);
         }

@@ -52,9 +52,10 @@ class XF2Bridge
     {
         $path = $this->directoryPath . '/src/XF.php';
         if( file_exists($path) && is_readable($path) && require_once($path)) {
-            \XF::start($this->directoryPath);
-            $app = \XF::setupApp('XF\Pub\App');
-            $app->start();
+            //\XF::start($this->directoryPath);
+            //$app = \XF::setupApp('XF\Pub\App');
+            //$app->start();
+		$app = \XF::app();
         } else
             throw new \Exception('Could not load XenForo check path: ' . $path);
     }

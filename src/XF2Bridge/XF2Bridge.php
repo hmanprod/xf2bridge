@@ -113,9 +113,9 @@ class XF2Bridge
      * @return boolean
      */
 
-    public function isModerator()
+     public function isModerator()
 	{
-		return $this->retrieveVisitor()->is_moderator;
+		return $this->getVisitor()->is_moderator;
 	}
 
     /**

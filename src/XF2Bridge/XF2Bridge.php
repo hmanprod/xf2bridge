@@ -106,6 +106,17 @@ class XF2Bridge
     {
         return $this->retrieveVisitor();
     }
+	
+    /**
+     * Checks if current visitor is moderator
+     *
+     * @return boolean
+     */
+
+    public function isModerator()
+	{
+		return $this->retrieveVisitor()->is_moderator;
+	}
 
     /**
      * Checks if current visitor is banned

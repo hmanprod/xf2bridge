@@ -18,11 +18,12 @@ class XenAuthAdminMiddleware
     {
         $baseUrl = config('xf2bridge.xenforo_base_url_path');
 
-        if(!$this->xenforo->isAdmin() || $this->xenforo->isBanned())
-        {
+        if($this->xenforo->isBanned())
             return redirect($baseUrl);
-        }
 
-        return $next($request);
+        if( $this->xenforo->isAdmin() || $this->xenforo->isModerator())
+            return $next($request);
+
+        return redirect($baseUrl);
     }
 }
